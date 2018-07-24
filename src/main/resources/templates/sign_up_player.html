@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Sign up player</title>
+</head>
+<body>
+	<form th:action="@{/signup_player}"  th:object="${player}"  method="post">
+	    Name: <input  type="text" th:field = "*{name}"  placeholder="Player Name"/><br>
+	  	Number: <select th:field = "*{num}"> 
+	    			<option th:each="n : ${#numbers.sequence(1,99)}" th:value="${n}" th:text="${n}"/>
+	    	</select>
+	    	<br>
+	    Position: <select th:field = "*{position}">
+	    			<option value ="FW">FW</option>
+	    			<option value ="MF">MF</option>
+	    			<option value ="DF">DF</option>
+	    			<option value ="GK">GK</option>  
+	    		</select>
+	    		<br> 
+	    Team: <select th:field = "*{team}"> 
+	    			<option th:each="team : ${teamList}"
+	                        th:value="${team.getId()}"
+	                        th:text="${team.getName()}"/>
+	    	</select>
+	    <br>
+	    <input type="submit" value="Sign Up"/>
+    </form>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show players of team</title>
+</head>
+<body>
+	<form th:action="@{/players}"  th:object="${team}"  method="post">
+     Team: <select th:field = "*{name}"> 
+	    			<option th:each="team : ${teamList}"
+	                        th:value="${team.getName()}"
+	                        th:text="${team.getName()}"/>
+	    	</select>
+    <input type="submit" value="Search"/>
+</form>
+</body>
+</html>
