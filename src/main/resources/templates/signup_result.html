@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Result</title>
+</head>
+<body>
+<p th:text="Home">Soccer</p>
+ <div class="starter-template" th:switch = "${signup_result}">	
+       <h2 th:case = "'success'">
+       		Sign up success!
+       </h2>
+       <h2 th:case = "'fail'">
+       		Sign up fail!
+       </h2>
+       <h2><a th:href="@{/home}">Home</a></h2>
+ </div>
+</body>
+</html>

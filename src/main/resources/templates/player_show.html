@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${teamName}"></title>
+</head>
+	<body>
+	  <h2 th:text = ${teamName} ></h2>
+	  <table>
+	    <tr th:each="player : ${listPlayer}">
+	    	<td th:text="${player.getNum()}"></td>	
+	    	<td th:text="${player.getName()}"></td>	
+		</tr> 
+	  </table>
+	</body>
+</html>
